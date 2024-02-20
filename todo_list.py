@@ -12,8 +12,11 @@ while not toleave:
     cmd = str(input("")).upper() #Gets the user's command and makes it all caps
     if cmd == "ADD": #If the command is ADD
         task = input("Name of task? ")
-        thelist.update({task:False}) #Creates a new entry in the dictionary with the task inputted
-        print("Task successfully added.")
+        if task in thelist:
+            print("Error: Task already in list")
+        else:
+            thelist.update({task:False}) #Creates a new entry in the dictionary with the task inputted
+            print("Task successfully added.")
     elif cmd == "VIEW":
         for x,y in thelist.items(): #For each key in the dictionary
             if y: #If the value at the key is True
