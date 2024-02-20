@@ -1,0 +1,1 @@
+This project is a simple to-do list. You can add tasks, view open tasks, mark tasks as completed, and delete them. Additional functionality may be added over time. 
