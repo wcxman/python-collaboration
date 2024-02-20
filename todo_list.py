@@ -6,7 +6,8 @@ print('''Welcome to the list terminal!
          EXIT - Exits the terminal
          VIEW - Shows the current to do list
          COMPLETE - Completes a task
-         REMOVE - Removes a task''')
+         REMOVE - Removes a task
+         CLEAN - Removes all tasks marked as complete''')
 while not toleave:
     cmd = str(input("")).upper() #Gets the user's command and makes it all caps
     if cmd == "ADD": #If the command is ADD
@@ -33,6 +34,12 @@ while not toleave:
             print("The task was successfully removed")
         else:
             print("Unrecognized task")
+    elif cmd == "CLEAN":
+        newlist = thelist.copy() #Creates a new list that's a copy of the original
+        for i in thelist.keys(): #For each key in the list
+            if thelist[i] == True: #If the key has a True value
+                del newlist[i] #Deletes the key from the copied list
+        thelist = newlist #Sets the main list to the copied one, with items deleted if applicable
     elif cmd == "EXIT":
         toleave = True #Breaks the while loop
     else: 
