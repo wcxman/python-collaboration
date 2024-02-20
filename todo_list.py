@@ -34,12 +34,6 @@ while not toleave:
             print("The task was successfully removed")
         else:
             print("Unrecognized task")
-    elif cmd == "CLEAN":
-        newlist = thelist.copy() #Creates a new list that's a copy of the original
-        for i in thelist.keys(): #For each key in the list
-            if thelist[i] == True: #If the key has a True value
-                del newlist[i] #Deletes the key from the copied list
-        thelist = newlist #Sets the main list to the copied one, with items deleted if applicable
     elif cmd == "EXIT":
         toleave = True #Breaks the while loop
     else: 
